@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}ContactUs{% endblock %}
+{% block content %}
+
+<div class="container second pt-5">
+    <div class="row align-items-center justify-content-center" style="padding: 40px;">
+        <div data-aos="fade-down-right" class="col-lg-6 col-md-12 col-sm-12 col-12 pe-md-5 border-end">
+            <h1 class="title fw-bold mb-4">Join Us</h1>
+            <p class="mb-5 fs-5 text">Join us on our journey as we continue to innovate, inspire, and transform the world around us. Whether you're a startup looking to disrupt the market, a large corporation seeking to stay ahead of the curve, or an individual passionate about driving change, we invite you to partner with us and be a part of the InnoHub community. Together, we can shape the future and make a lasting impact on the world.</p>
+            <a href="#contactform"><button type="button" class="btn btn-outline-success">Join Us</button></a>
+        </div>
+        <div data-aos="fade-down-left" class="col-lg-6 col-md-10 col-sm-12 col-12 text-center mb-4 mb-md-0">
+            <img src="{% static 'images/Contact-us.png' %}" class="img-fluid" alt="">
+        </div>
+    </div>
+</div>
+
+<section class="bg-light">
+    <div class="container py-5" id="contactform">
+        <div data-aos="zoom-in" class="container text-center my-4">
+            <h1>Feel free to<span class="text-primary"> Connect</span></h1>
+            <hr class="w-25 m-auto mb-5">
+        </div>
+
+        <div class="row justify-content-center" id="contactform">
+            <div class="col-lg-10 col-md-6 col-sm-12 col-12 shadow border p-4 rounded">
+                <form class="row g-3 contact-form">
+                    <div data-aos="fade-right" class="form-group col-lg-6 col-md-6">
+                        <label for="inputName" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="inputName" placeholder="Enter your name">
+                    </div>
+                    <div data-aos="fade-left" class="form-group col-lg-6 col-md-6">
+                        <label for="inputEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email">
+                    </div>
+                    <div data-aos="fade-right" class="form-group col-md-6">
+                        <label for="inputsubject" class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="inputsubject" placeholder="Enter Subject">
+                    </div>
+                
+                    <div data-aos="fade-left" class="form-group col-md-6">
+                        <label for="inputCity" class="form-label">City</label>
+                        <input type="text" class="form-control" id="inputCity">
+                    </div>
+                    
+                    <div data-aos="fade-up" class="form-group col-12">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
+                    </div>
+                    <div class="col-12">
+                        <div data-aos="fade-down" class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                                Accept <a href="#">Terms of Services</a> and <a href="#">Privacy Policy</a>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-12">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

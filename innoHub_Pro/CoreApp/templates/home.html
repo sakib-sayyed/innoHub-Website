@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}innoHub{% endblock %}
+{% block content %}
+
+<style>
+  *{padding: 0; margin: 0; box-sizing: border-box;}
+  
+  .first-subtitle{
+      border-left: 3px solid rgb(236, 79, 79);
+  }
+  .first-title,.second-title{
+      font-size: 3rem;
+  }
+  .first-img img, .second-img img{
+      width: 30rem;
+      margin: auto;
+  }
+  .justify-content-around a{
+      color: black;
+  }
+  .justify-content-around a:hover{
+      color: aliceblue;
+  }
+  .service-img{
+    max-width: 100%;
+    margin: auto;
+  }
+  .text, .card-text{
+    text-align: justify;
+    text-indent: 5%;
+  }
+  #cross {
+    cursor: pointer;
+  }
+</style>
+
+  {% if messages %}
+  
+  <div class="notification-container" style="margin-top:12vh;">
+    <div class="container alert alert-success fs-5 p-1 d-flex justify-content-around shadow align-items-center" role="alert" style="margin-top:12vh;">
+      {% for message in messages %}
+      <p {% if message.tags %} class="{{ message.tags }}"{% endif %} class="m-auto">{{message}}</p>
+      {% endfor %}
+      <img id='cross' src="{% static 'images/close.png' %}" width="15px" height="15px" style="float: right;">
+    </div>
+  </div>
+  
+  <script>
+    var cross = document.getElementById('cross')
+    cross.addEventListener('click', ()=> {
+        document.getElementsByClassName('notification-container')[0].style.display = 'none';
+    })
+  </script>
+  {% endif %}
+
+  <div class="container first" style=" padding-top:10vh;">
+      <div class="row d-flex align-items-center" style="padding: 40px;">
+          <div data-aos="fade-up-right" class="col-lg-6 col-md-12 col-sm-12 ps-5">
+              <p class="first-subtitle ps-2">InnoHub Marketing Agency</p>
+              <h1 class="first-title fw-bold lh-sm">Welcome to InnoHub - Your Gateway to Innovation!</h1>
+              <p class="mb-5 fs-5 text">we are driven by a passion for innovation and a commitment to providing cutting-edge solutions to our clients. As a pioneering startup, we understand the rapidly evolving landscape of technology and business, and we are here to help you navigate it with ease.</p>
+              <a href="{% url 'CoreApp:contactUs' %}"><button type="button" class="btn btn-primary">Contact Us</button></a>
+              <a href="{% url 'CoreApp:services' %}"><button type="button" class="btn btn-outline-info ms-2">Over Services</button></a>
+          </div>
+          <div data-aos="fade-up-left" class="col-md-6 col-sm-12 first-img px-5">
+              <img src="{% static 'images/hero-banner.jpg' %}" alt="">
+          </div>
+      </div>
+  </div>
+
+  <section class="bg-light">
+    <div class="container second my-5 pt-5">
+      <div class="row align-items-center justify-content-center"  style="padding: 40px;">
+          <div data-aos="fade-right" class="col-lg-6 col-md-6 col-sm-12 col-12  mb-4 mb-md-0 second-img">
+              <img src="{% static 'images/our-mission.png' %}" alt="" class="img-fluid">
+          </div>
+          <div data-aos="fade-left" class="col-lg-6 col-md-12 col-sm-12 col-12 ps-md-5" >
+              <p class="mb-5 fs-5 text">Our mission is simple to harness the power of innovation to solve the challenges facing businesses today. Whether you're a small startup looking to disrupt the market or a large corporation seeking to stay ahead of the curve, InnoHub is your trusted partner in driving growth and success.</p>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-section">
+    <div class="container service-section">
+      <div data-aos="zoom-in" class="container text-center my-5">
+        <h1>Key <span class="text-primary">Services</span></h1>
+        <hr class="w-25 m-auto">
+      </div>
+      <div class="row g-0 justify-content-center">
+
+        <div data-aos="flip-left" class="card m-4" style="max-width: 540px;">
+          <div class="row g-0 shadow d-flex align-items-center">
+            <div class="col-md-4">
+              <img src="{% static 'images/services-img/consulting-ser.png' %}" class="img-fluid rounded-start service-img" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Consulting Services</h5>
+                <p class="card-text text-dark">Our experienced consultants work closely with you to identify opportunities for growth and develop strategic plans to achieve your business objectives.</p>
+                <a href="{% url 'CoreApp:contactUs' %}"><button class="btn btn-success">Chat</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="flip-right" class="card m-4" style="max-width: 540px;">
+          <div class="row g-0 shadow d-flex align-items-center">
+            <div class="col-md-4">
+              <img src="{% static 'images/services-img/product-manag.png' %}" class="img-fluid rounded-start service-img" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Product Development</h5>
+                <p class="card-text text-dark">From concept to launch, our product development team is here to bring your ideas to life. We specialize in agile and iterative development processes.</p>
+                <a href="{% url 'CoreApp:contactUs' %}"><button class="btn btn-success">Chat</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="flip-left" class="card m-4" style="max-width: 540px;">
+          <div class="row g-0 shadow d-flex align-items-center">
+            <div class="col-md-4">
+              <img src="{% static 'images/services-img/digital-trans.png' %}" class="img-fluid rounded-start service-img" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Digital Transformation Solutions</h5>
+                <p class="card-text text-dark">Embrace the future of business with our digital transformation solutions. We help organizations modernize their operations and optimize their processes.</p>
+                <a href="{% url 'CoreApp:contactUs' %}"><button class="btn btn-success">Chat</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="flip-right" class="card m-4" style="max-width: 540px;">
+          <div class="row g-0 shadow d-flex align-items-center">
+            <div class="col-md-4">
+              <img src="{% static 'images/services-img/Emerging-technology.png' %}" class="img-fluid rounded-start service-img" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Emerging Technologies Integration</h5>
+                <p class="card-text text-dark">Stay ahead of the curve with our expertise in emerging technologies. Our team stays abreast of the latest advancements in artificial intelligence and more.</p>
+                <a href="{% url 'CoreApp:contactUs' %}"><button class="btn btn-success">Chat</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div data-aos="zoom-out" class="container fs-5 mb-5 bg-primary p-2 d-flex justify-content-around shadow align-items-center" style="height: 10vh;">
+        <p class="m-0">And many more as DevOps, Data Science, Marketing, Branding, etc.</p>
+        <a href="{% url 'CoreApp:services' %}" class="text-decoration-none">Exlpore All services</a>
+      </div>
+
+    </div>
+  </section>
+    
+{% endblock %}

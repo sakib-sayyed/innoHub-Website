@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}AboutUs{% endblock %}
+{% block content %}
+
+<style>
+    *{padding: 0; margin: 0; box-sizing: border-box;}
+
+    .first-subtitle{
+        border-left: 3px solid rgb(236, 79, 79);
+    }
+    .title{
+        font-size: 3rem;
+    }
+    .image img{
+        width: 35rem;
+        margin: auto;
+    }
+    .text{
+        text-align: justify;
+        text-indent: 5%;
+    }    
+</style>
+
+<div class="container first" style=" padding-top:10vh;">
+    <div class="row d-flex align-items-center" style="padding: 40px;">
+        <div data-aos="fade-right" class="col-lg-6 col-md-12 col-sm-12 border-end pe-5">
+            <h1 class="title fw-bold mb-4">Our Story</h1>
+            <p class="mb-5 fs-5 text">At InnoHub, our journey began with a simple yet profound vision: to create a hub where innovation thrives and where businesses are empowered to shape a brighter future. Founded by a team of passionate innovators with diverse backgrounds and expertise, InnoHub emerged as a response to the ever-evolving landscape of technology and business. Since our inception, we have been committed to pioneering new ways of thinking, challenging the status quo, and driving positive change in the world.</p>
+        </div>
+        <div data-aos="fade-left" class="col-lg-6 col-md-10 col-sm-12 image px-5">
+            <img src="{% static 'images/about-img.png' %}" alt="" class="img-fluid">
+        </div>
+    </div>
+</div>
+
+<section class="bg-light">
+    <div class="container second pt-5">
+        <div class="row align-items-center justify-content-center" style="padding: 40px;">
+            <div data-aos="fade-left" class="col-lg-6 col-md-10 col-sm-12 col-12 text-center mb-4 mb-md-0">
+                <img src="{% static 'images/our-vision.png' %}" class="img-fluid" alt="">
+            </div>
+            <div data-aos="fade-right" class="col-lg-6 col-md-12 col-sm-12 col-12 ps-md-5 border-start">
+                <h1 class="title fw-bold mb-4">Our Vision</h1>
+                <p class="mb-5 fs-5 text">Our vision is to be the leading catalyst for innovation, driving positive change and shaping the future of business. We envision a world where businesses embrace innovation as a core value, where creativity flourishes, and where technology is harnessed to create sustainable solutions that benefit society as a whole. By empowering businesses to innovate and adapt, we aim to build a brighter future for generations to come.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="">
+    <div class="container second my-5">
+        <div class="row d-flex align-items-center"  style="padding: 40px;">
+
+            <div class="col second-content ps-5" >
+                <h1 data-aos="fade-down" class="title mb-3">Our Values</h1>
+                <p data-aos="fade-up" class="mb-4 fs-5">At the heart of everything we do are our core values, which serve as the guiding principles for our team and our interactions with clients and partners alike:</p>
+                <li data-aos="fade-down" class="fs-4">Innovation</li>
+                <p data-aos="fade-up">We believe in the power of innovation to transform businesses and drive positive change. We are constantly pushing the boundaries of what's possible, exploring new ideas, and embracing emerging technologies to stay ahead of the curve.</p>
+                <li data-aos="fade-down" class="fs-4">Excellence</li>
+                <p data-aos="fade-up">We are dedicated to delivering excellence in everything we do, from the quality of our work to the level of service we provide to our clients. We hold ourselves to the highest standards of professionalism and integrity, ensuring that we always exceed expectations.</p>
+                <li data-aos="fade-down" class="fs-4">Collaboration</li>
+                <p data-aos="fade-up">We believe in the power of collaboration and teamwork. We recognize that the best solutions often emerge from diverse perspectives and collective effort. We work closely with our clients, partners, and team members to co-create innovative solutions that address complex challenges and drive meaningful impact.</p>
+                <li data-aos="fade-down" class="fs-4">Empowerment</li>
+                <p data-aos="fade-up">We are committed to empowering businesses to unlock their full potential. Whether it's through our consulting services, product development solutions, or training programs, we strive to equip our clients with the knowledge, tools, and resources they need to succeed in today's rapidly changing world.</p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+{% endblock %}

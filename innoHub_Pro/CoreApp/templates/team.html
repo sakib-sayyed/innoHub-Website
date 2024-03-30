@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Team{% endblock %}
+{% block content %}
+
+<style>
+
+  /* {% load static %} */
+  *{padding: 0; margin: 0; box-sizing: border-box;}
+
+  .first-section{    
+    position: relative;
+    height: 60vh;
+    background-image: url("{% static 'images/team-page-img.jpg' %}");
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 0 100px 0;
+    overflow: hidden;
+    color: aliceblue;
+  }
+  .color-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    clip-path: inherit;
+  }
+  .content{
+      padding-top: 50px;
+  }
+  .title{
+      font-size: 3.5rem;
+      line-height: 10vh;
+      font-weight: 700;
+  }
+  .content p{
+    text-justify:inter-ideograph;
+  }
+  .card-body img{
+    width: 150px;
+  }
+  .card-body{
+    height: 30rem;
+    overflow: hidden;
+  }
+</style>
+
+<div class="first-section">
+  <div class="container">
+    <div class="row justify-content-center color-overlay">
+      <div class="col-lg-8 content">
+        <h1 data-aos="fade-down" class="title mb-5 text-info">Meet the innoHub Team!</h1>
+        <p data-aos="fade-up">Our team at InnoHub is composed of passionate innovators, experienced professionals, and creative thinkers who are dedicated to helping our clients succeed. With diverse backgrounds and expertise spanning various industries, we bring a wealth of knowledge and a fresh perspective to every project we undertake.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container team-container" style="margin-top:10vh;">
+  <div data-aos="zoom-in" class="container text-center my-5">
+    <h1>Our <span class="text-primary">Team</span></h1>
+    <hr class="w-25 m-auto">
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+      <div class="card text-center shadow">
+        <div class="card-body">
+          <img data-aos="zoom-in" src="{% static 'images/team/S01.jpg' %}" alt="" class="img-fluid rounded-circle border border-primary p-2">
+          <h5 data-aos="zoom-out" class="card-title mt-4 fw-bold">John Doe</h5>
+          <p data-aos="zoom-in" class="card-subtitle my-3">-CEO and Founder-</p>
+          <p data-aos="fade-up" class="card-text text-secondary">With over two decades of experience in the technology sector, John is the driving force behind InnoHub's vision and strategic direction. He is passionate about harnessing the power of innovation to solve complex challenges and drive positive change.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+      <div class="card text-center shadow">
+        <div class="card-body">
+          <img data-aos="zoom-in" src="{% static 'images/team/S02.jpg' %}" alt="" class="img-fluid rounded-circle border border-primary p-2">
+          <h5 data-aos="zoom-out" class="card-title mt-4 fw-bold">Jane Smith</h5>
+          <p data-aos="zoom-in" class="card-subtitle my-3">-Chief Technology Officer-</p>
+          <p data-aos="fade-up" class="card-text text-secondary">Jane is a seasoned technologist with a passion for emerging technologies and a track record of delivering innovative solutions. She leads our technology team, driving the development of cutting-edge products and services that meet the evolving needs of our clients.</p>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+      <div class="card text-center shadow">
+        <div class="card-body">
+          <img data-aos="zoom-in" src="{% static 'images/team/S03.jpg' %}" alt="" class="img-fluid rounded-circle border border-primary p-2">
+          <h5 data-aos="zoom-out" class="card-title mt-4 fw-bold">Sarah Lee</h5>
+          <p data-aos="zoom-in" class="card-subtitle my-3">-Head of Product Develop.-</p>
+          <p data-aos="fade-up" class="card-text text-secondary">Sarah is a creative visionary with a talent for turning ideas into reality. She leads our product development team, overseeing the design, development, and launch of innovative products that delight our clients and exceed their expectations.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+      <div class="card text-center shadow">
+        <div class="card-body">
+          <img data-aos="zoom-in" src="{% static 'images/team/S04.jpg' %}" alt="" class="img-fluid rounded-circle border border-primary p-2">
+          <h5 data-aos="zoom-out" class="card-title mt-4 fw-bold">David Johnson</h5>
+          <p data-aos="zoom-in" class="card-subtitle my-3">-Head of Consulting-</p>
+          <p data-aos="fade-up" class="card-text text-secondary">David brings a wealth of experience in business consulting and strategy development to his role at InnoHub. He works closely with our clients to understand their unique challenges and develop tailored solutions that drive growth and success.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+      <div class="card text-center shadow">
+        <div class="card-body">
+          <img data-aos="zoom-in" src="{% static 'images/team/S05.jpg' %}" alt="" class="img-fluid rounded-circle border border-primary p-2">
+          <h5 data-aos="zoom-out" class="card-title mt-4 fw-bold">Michael Brown</h5>
+          <p data-aos="zoom-in" class="card-subtitle my-3">-Head of Marketing and Communications-</p>
+          <p data-aos="fade-up" class="card-text text-secondary">Michael is a seasoned marketer with a knack for storytelling and a passion for building strong brands. He leads our marketing and communications efforts, ensuring that our message resonates with our target audience and drives engagement and growth.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+      <div class="card text-center shadow">
+        <div class="card-body">
+          <img data-aos="zoom-in" src="{% static 'images/team/S06.jpg' %}" alt="" class="img-fluid rounded-circle border border-primary p-2">
+          <h5 data-aos="zoom-out" class="card-title mt-4 fw-bold">Emily Davis</h5>
+          <p data-aos="zoom-in" class="card-subtitle my-3">-Head of Operations-</p>
+          <p data-aos="fade-up" class="card-text text-secondary">Emily is a detail-oriented operations expert with a passion for efficiency and optimization. She oversees our day-to-day operations, ensuring that everything runs smoothly and that our team has the support and resources they need to succeed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+
+{% endblock %}

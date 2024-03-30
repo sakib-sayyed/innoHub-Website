@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Services{% endblock %}
+{% block content %}
+
+<style>
+  *{padding: 0; margin: 0; box-sizing: border-box;}
+  body{overflow-x: hidden;}
+  .first-section{    
+    position: relative;
+    height: 60vh;
+    background-image: url("{% static 'images/service-img3.jpg' %}");
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 0 100px 0;
+    overflow: hidden;
+    color: aliceblue;
+  }
+  .color-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    
+    clip-path: inherit;
+}
+  .content{
+      padding-top: 50px;
+  }
+  .title{
+      font-size: 3.5rem;
+      line-height: 10vh;
+      font-weight: 700;
+  }
+  .content p{
+    text-justify:inter-ideograph;
+  }
+
+  .card-title {
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 5rem;
+    padding: 0 5px;
+    -webkit-text-stroke: 1px blue;
+    -webkit-text-fill-color: transparent;
+  }
+  .card-subtitle{
+    padding: 10px 0;
+  }
+  .card-text{
+    border-left: 5px solid royalblue;
+    padding: 10px 0;
+  }
+</style>
+
+<div class="first-section">
+  <div class="container">
+    <div class="row justify-content-center color-overlay">
+      <div class="col-lg-8 content">
+        <h1 data-aos="fade-down" class="title mb-5 text-info">Explore Our Range of Technology Services</h1>
+        <p data-aos="fade-up">At InnoHub, we are dedicated to providing a wide range of innovative solutions tailored to meet the unique needs of our clients. Our services are designed to help businesses of all sizes thrive in today's rapidly evolving landscape. Explore our offerings below to discover how we can help you drive growth, streamline operations, and stay ahead of the competition.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container py-5 ">
+  <div data-aos="zoom-out" class="container text-center my-5">
+    <h1>Our <span class="text-primary">Services</span></h1>
+    <hr class="w-25 m-auto">
+  </div>
+  <div class="row d-flex align-items-center">
+    {% for s in services  %}
+    
+    <div class="col-md-6 col-lg-4 col-12 mb-4">
+      <div data-aos="zoom-out-up" class="card shadow border" style="position:relative;">
+        <div class="card-body" style="height: 21rem;">
+          <h1 class="card-title">{{s.get_padded_id}}</h1>
+          <h3 class="card-subtitle mb-2">{{s.service_title}}</h3>
+          <p class="card-text ps-3 text-dark">{{s.description}}</p>
+          <a href="{% url 'CoreApp:contactUs' %}" class="btn btn-outline-info mt-4" style="position: absolute; bottom: 5%; left: 5%;">Contact</a>
+        </div>
+      </div>
+    </div>
+    
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
